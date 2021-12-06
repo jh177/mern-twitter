@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
-const db = require("./config/keys").mongoURI;
+const {mongoURI} = require("./config/keys");
 const tweets = require("./routes/api/tweets");
 const users = require("./routes/api/users");
 const bodyParser = require("body-parser");
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(mongoURI, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
