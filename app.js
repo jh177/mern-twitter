@@ -6,6 +6,8 @@ const tweets = require("./routes/api/tweets");
 const users = require("./routes/api/users");
 const bodyParser = require("body-parser");
 const passport = require('passport');
+const path = require('path');
+
 
 mongoose
   .connect(db, { useNewUrlParser: true })
